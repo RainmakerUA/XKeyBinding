@@ -1,0 +1,34 @@
+﻿<Bindings>
+	<Binding name="CLICK XBoundButton01:LeftButton" header="XBOUND_KEYS" category="XKB_ADDON"></Binding>
+	<Binding name="CLICK XBoundButton02:LeftButton" category="XKB_ADDON"></Binding>
+	<Binding name="CLICK XBoundButton03:LeftButton" category="XKB_ADDON"></Binding>
+	<Binding name="CLICK XBoundButton04:LeftButton" category="XKB_ADDON"></Binding>
+	<Binding name="CLICK XBoundButton05:LeftButton" category="XKB_ADDON"></Binding>
+	<Binding name="CLICK XBoundButton06:LeftButton" category="XKB_ADDON"></Binding>
+	<Binding name="CLICK XBoundButton07:LeftButton" category="XKB_ADDON"></Binding>
+	<Binding name="CLICK XBoundButton08:LeftButton" category="XKB_ADDON"></Binding>
+	<Binding name="CLICK XBoundButton09:LeftButton" category="XKB_ADDON"></Binding>
+	<Binding name="CLICK XBoundButton10:LeftButton" category="XKB_ADDON"></Binding>
+	<Binding name="CLICK XBoundButton11:LeftButton" category="XKB_ADDON"></Binding>
+	<Binding name="CLICK XBoundButton12:LeftButton" category="XKB_ADDON"></Binding>
+	<Binding name="CLICK XBoundButton13:LeftButton" category="XKB_ADDON"></Binding>
+	<Binding name="CLICK XBoundButton14:LeftButton" category="XKB_ADDON"></Binding>
+	<Binding name="CLICK XBoundButton15:LeftButton" category="XKB_ADDON"></Binding>
+	<Binding name="CLICK XBoundButton16:LeftButton" category="XKB_ADDON"></Binding>
+	<Binding name="CLICK XBoundButton17:LeftButton" category="XKB_ADDON"></Binding>
+	<Binding name="CLICK XBoundButton18:LeftButton" category="XKB_ADDON"></Binding>
+	<Binding name="CLICK XBoundButton19:LeftButton" category="XKB_ADDON"></Binding>
+	<Binding name="CLICK XBoundButton20:LeftButton" category="XKB_ADDON"></Binding>
+	<Binding name="CLICK XBoundButton21:LeftButton" category="XKB_ADDON"></Binding>
+	<Binding name="CLICK XBoundButton22:LeftButton" category="XKB_ADDON"></Binding>
+	<Binding name="CLICK XBoundButton23:LeftButton" category="XKB_ADDON"></Binding>
+	<Binding name="CLICK XBoundButton24:LeftButton" category="XKB_ADDON"></Binding>
+	<Binding name="CLICK XBoundButton25:LeftButton" category="XKB_ADDON"></Binding>
+	<Binding name="CLICK XBoundButton26:LeftButton" category="XKB_ADDON"></Binding>
+	<Binding name="CLICK XBoundButton27:LeftButton" category="XKB_ADDON"></Binding>
+	<Binding name="CLICK XBoundButton28:LeftButton" category="XKB_ADDON"></Binding>
+	<Binding name="CLICK XBoundButton29:LeftButton" category="XKB_ADDON"></Binding>
+	<Binding name="CLICK XBoundButton30:LeftButton" category="XKB_ADDON"></Binding>
+	<Binding name="CLICK XBoundButton31:LeftButton" category="XKB_ADDON"></Binding>
+	<Binding name="CLICK XBoundButton32:LeftButton" category="XKB_ADDON"></Binding>
+</Bindings>

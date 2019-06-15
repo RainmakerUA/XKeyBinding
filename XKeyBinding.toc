@@ -1,0 +1,20 @@
+## Interface: 80100
+## Title: Extended Key Binding
+## Notes: Key Bindings for various in-game actions.
+## Notes-ruRU: Назначения клавиш для различных игровых действий.
+## Author: @@release-author@@
+## Version: @@release-version@@
+## SavedVariables: XKeyBindingDB
+## OptionalDeps: Ace3
+## X-Category: Miscellaneous, Artwork, Combat, Quests & Leveling
+## X-Website: https://wow.curseforge.com/projects/extended-key-binding
+## X-Embeds: Ace3
+## X-ReleaseDate: @@release-date@@
+
+Locales\locales.xml
+libs.xml
+
+XKeyBinding.lua
+XKeyBinding_Buttons.lua
+XKeyBinding_Config.lua
+XKeyBinding_Event.lua
