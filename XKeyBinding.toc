@@ -6,7 +6,7 @@
 ## Version: @@release-version@@
 ## SavedVariables: XKeyBindingDB
 ## OptionalDeps: Ace3
-## X-Category: Miscellaneous, Artwork, Combat, Quests & Leveling
+## X-Category: Miscellaneous, Action Bars, Chat & Communication, Development Tools
 ## X-Website: https://wow.curseforge.com/projects/extended-key-binding
 ## X-Embeds: Ace3
 ## X-ReleaseDate: @@release-date@@
