@@ -1,7 +1,7 @@
 -- This file is generated with ListStrings.ps1
 local L = LibStub("AceLocale-3.0"):NewLocale("XKeyBinding", "ruRU")
 if not L then return end
----------- Total: 44 ----------
+---------- Total: 46 ----------
 L["Command #"] = "Команда №"
 L[" (empty) "] = " (пусто) "
 L["(no name)"] = "(без имени)"
@@ -14,6 +14,7 @@ L["Show on-screen notification when command is invoked"] = "Отображать
 L["Chat notification"] = "Уведомление в чате"
 L["Show chat notification when command is invoked"] = "Отображать уведомление в чате при запуске команды"
 L["Command Text"] = "Текст команды"
+L["(not assigned)"] = "(не назначено)"
 L["Command Description"] = "Описание"
 L["Author"] = "Автор"
 L["Version"] = "Версия"
@@ -35,8 +36,8 @@ L["|cff00ff00On|r"] = "|cff00ff00Вкл.|r"
 L["|cffff1010Off|r"] = "|cffff1010Выкл.|r"
 L["Error while parsing code:\n"] = "Ошибка разбора:\n"
 L["Error while running code:\n"] = "Ошибка выполнения:\n"
-L["Lua code executed"] = "Код Lua выполнен"
 L["Lua code: "] = "Код Lua: "
+L["Lua code executed"] = "Код Lua выполнен"
 L["DISABLED.TYPENAME"] = "Отключена"
 L["DISABLED.TYPEZHELP"] = "|cffff0000Command is disabled|r"
 L["MACRO_NAME.TYPENAME"] = "Имя макроса"

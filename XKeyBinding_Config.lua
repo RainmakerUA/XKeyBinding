@@ -14,8 +14,11 @@ local type = type
 local ipairs = ipairs
 local pairs = pairs
 local print = print
-local tinsert = tinsert
 local random = math.random
+local tinsert = table.insert
+local tconcat = table.concat
+local type = type
+local unpack = unpack
 
 local Event
 
@@ -202,6 +205,28 @@ local function getCommandTypes(args)
 		)
 end
 
+local function getCommandShortcut(index)
+	return map(
+		{ GetBindingKey(("CLICK XBoundButton%02d:LeftButton"):format(index)) },
+		function(str)
+			if not str:find("-") then
+				return str
+			end
+			local key = { str:match("%-([^-]+)$") }
+			if str:match("SHIFT%-") then
+				tinsert(key, 1, "Shift")
+			end
+			if str:match("ALT%-") then
+				tinsert(key, 1, "Alt")
+			end
+			if str:match("CTRL%-") then
+				tinsert(key, 1, "Ctrl")
+			end
+			return tconcat(key, "-")
+		end
+	)
+end
+
 local function getCommandProp(prop, index)
 	local data = db.commands[index]
 	local cmdType
@@ -262,7 +287,7 @@ local function getCommandOptions(index)
 			},
 			name = {
 				type = "input",
-				order = 20,
+				order = 30,
 				name = L["Name"],
 				desc = L["Command name"],
 				width = "full",
@@ -270,29 +295,47 @@ local function getCommandOptions(index)
 			},
 			notifyScreen = {
 				type = "toggle",
-				order = 30,
+				order = 40,
 				name = L["On-screen notification"],
 				desc = L["Show on-screen notification when command is invoked"],
 				disabled = isControlDisabled,
 			},
 			notifyChat = {
 				type = "toggle",
-				order = 40,
+				order = 50,
 				name = L["Chat notification"],
 				desc = L["Show chat notification when command is invoked"],
 				disabled = isControlDisabled,
 			},
 			text = {
 				type = "input",
-				order = 50,
+				order = 60,
 				name = L["Command Text"],
 				width = "full",
 				multiline = 10,
 				disabled = isControlDisabled,
 			},
+			keybinding = {
+				type = "group",
+				order = 70,
+				name = _G["KEY_BINDINGS"],
+				guiInline = true,
+				width = "full",
+				args = {
+					keybindingtext = {
+						type = "description",
+						order = 0,
+						fontSize = "medium",
+						name = function()
+							local keys = getCommandShortcut(index)
+							return #keys > 0 and tconcat(keys, ("\32"):rep(5)) or ("\32\32" .. L["(not assigned)"])
+						end,
+					}
+				},
+			},
 			help = {
 				type = "group",
-				order = 60,
+				order = 80,
 				name = L["Command Description"],
 				guiInline = true,
 				width = "full",

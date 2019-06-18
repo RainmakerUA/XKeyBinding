@@ -1,7 +1,7 @@
 -- This file is generated with ListStrings.ps1
 local L = LibStub("AceLocale-3.0"):NewLocale("XKeyBinding", "enUS", true)
 if not L then return end
----------- Total: 44 ----------
+---------- Total: 46 ----------
 L["Command #"] = true
 L[" (empty) "] = true
 L["(no name)"] = true
@@ -14,6 +14,7 @@ L["Show on-screen notification when command is invoked"] = true
 L["Chat notification"] = true
 L["Show chat notification when command is invoked"] = true
 L["Command Text"] = true
+L["(not assigned)"] = true
 L["Command Description"] = true
 L["Author"] = true
 L["Version"] = true
@@ -35,8 +36,8 @@ L["|cff00ff00On|r"] = true
 L["|cffff1010Off|r"] = true
 L["Error while parsing code:\n"] = true
 L["Error while running code:\n"] = true
-L["Lua code executed"] = true
 L["Lua code: "] = true
+L["Lua code executed"] = true
 L["DISABLED.TYPENAME"] = "Disabled"
 L["DISABLED.TYPEZHELP"] = "|cffff0000Command is disabled|r"
 L["MACRO_NAME.TYPENAME"] = "Macro Name"

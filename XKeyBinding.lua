@@ -38,6 +38,13 @@ function mod:OnInitialize()
 	XKeyBinding.Main = Main
 	--@end-debug@
 
+	local name = GetAddOnMetadata(addonName, "Title")
+	setglobal("XKB_ADDON", name)
+	setglobal("BINDING_HEADER_XBOUND_KEYS", name)
+	for i = 1, Config.COMMAND_NUMBER do
+		setglobal(("BINDING_NAME_CLICK XBoundButton%02d:LeftButton"):format(i), L["Command #"] .. i)
+	end
+
 	do
 		local function getColorTable(r, g, b)
 			return { r = r, g = g, b = b }
@@ -53,14 +60,6 @@ function mod:OnInitialize()
 end
 
 function mod:OnEnable()
-	local name = GetAddOnMetadata(addonName, "Title")
-	setglobal("XKB_ADDON", name)
-	setglobal("BINDING_HEADER_XBOUND_KEYS", name)
-
-	for i = 1, Config.COMMAND_NUMBER do
-		setglobal(("BINDING_NAME_CLICK XBoundButton%02d:LeftButton"):format(i), L["Command #"] .. i)
-	end
-
 	Config:SetConfigChanged(self)
 	Buttons:SetNotify(self)
 
