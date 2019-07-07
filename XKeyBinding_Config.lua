@@ -130,12 +130,13 @@ local defaults = {
 		general = {
 			showNumbers = true,
 			showIcons = true,
-			notifyScreen = true,
-			notifyChat = true,
 		},
 		commands = {},
 	},
 }
+
+-- Event
+local configChangedEvent
 
 local function isNilOrEmptyString(str)
 	return str == nil or #str == 0
@@ -344,8 +345,8 @@ local function getCommandOptions(index)
 						type = "description",
 						order = 0,
 						fontSize = "medium",
-						name = function () return getCommandProp("help", index) end,
-						image = function () return getCommandProp("icon", index), 32, 32 end,
+						name = function() return getCommandProp("help", index) end,
+						image = function() return getCommandProp("icon", index), 32, 32 end,
 					},
 				},
 			},
@@ -442,9 +443,6 @@ local function getOptions(uiType, uiName, appName)
 		}
 	end
 end
-
--- Event
-local configChangedEvent
 
 function mod:OnInitialize()
 	local function handler(name, cat)

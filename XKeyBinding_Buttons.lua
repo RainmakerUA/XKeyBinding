@@ -87,11 +87,7 @@ local function getMainHandler(cmdType, text)
 		if func then
 			return function()
 				local success, result = pcall(func)
-				if success then
-					return true, tostring(result)
-				else
-					return false, result
-				end
+				return success, result
 			end
 		else
 			return function()
