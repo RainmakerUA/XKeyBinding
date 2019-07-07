@@ -11,7 +11,8 @@
 		"log": "No changes provided",
 		"gameVersions": [
 			"8.1.0",
-			"8.1.5"
+			"8.1.5",
+			"8.2.0"
 		]
 	},
 	"exclude": [
