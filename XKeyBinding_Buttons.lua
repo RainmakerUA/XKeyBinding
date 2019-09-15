@@ -17,9 +17,9 @@ local tostring = tostring
 local unpack = unpack
 local CreateFrame = CreateFrame
 local UIParent = UIParent
-local GetCVar = C_CVar.GetCVar
-local GetCVarDefault = C_CVar.GetCVarDefault
-local SetCVar = C_CVar.SetCVar
+local GetCVar = C_CVar and C_CVar.GetCVar or GetCVar
+local GetCVarDefault = C_CVar and C_CVar.GetCVarDefault or GetCVarDefault
+local SetCVar = C_CVar and C_CVar.SetCVar or SetCVar
 
 local Config
 local Event
