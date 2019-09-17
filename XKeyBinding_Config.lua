@@ -97,7 +97,13 @@ local commands = {}
 
 do
 	local typeNames = { "DISABLED", "MACRO_NAME", "MACRO_TEXT", "CVAR_TOGGLE", "LUA_CODE" }
-	local typeIcons = { "Interface\\TargetingFrame\\UI-RaidTargetingIcon_7", 133738, 1500878, 236188, 1500880 }
+	local typeIcons = {
+		[[interface\targetingFrame\UI-RaidTargetingIcon_7]],
+		[[interface\icons\inv_scroll_03]],
+		[[interface\icons\inv_scroll_02]],
+		[[interface\icons\inv_scroll_01]],
+		[[interface\icons\inv_scroll_07]],
+	}
 
 	for i, v in ipairs(typeNames) do
 		local sortableName = "T" .. i .. "_" .. v
