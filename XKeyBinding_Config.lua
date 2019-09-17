@@ -494,9 +494,9 @@ function mod:OnInitialize()
 	self:RegisterChatCommand("xpbar", openSettings)
 ]]
 
-	self.db.RegisterCallback(self, "OnProfileChanged", self.RefreshConfig)
-	self.db.RegisterCallback(self, "OnProfileCopied", self.RefreshConfig)
-	self.db.RegisterCallback(self, "OnProfileReset", self.RefreshConfig)
+	self.db.RegisterCallback(self, "OnProfileChanged", "RefreshConfig")
+	self.db.RegisterCallback(self, "OnProfileCopied", "RefreshConfig")
+	self.db.RegisterCallback(self, "OnProfileReset", "RefreshConfig")
 end
 
 function mod:RefreshConfig(event, data, newProfileKey)
