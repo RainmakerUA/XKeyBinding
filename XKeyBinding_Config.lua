@@ -95,6 +95,8 @@ local COMMAND_NUMBER = 32
 local commandTypes = {}
 local commands = {}
 
+local ICON_NAME_FORMAT = "|T%s:16:16:0:-1|t %s"
+
 do
 	local typeNames = { "DISABLED", "MACRO_NAME", "MACRO_TEXT", "CVAR_TOGGLE", "LUA_CODE" }
 	local typeIcons = {
@@ -188,7 +190,7 @@ local function getCommandName(index)
 	local spaceAdded = false
 
 	if icon and db.general.showIcons then
-		name = ("|T%s:20:20|t %s"):format(icon, name)
+		name = ICON_NAME_FORMAT:format(icon, name)
 		spaceAdded = true
 	end
 
@@ -204,7 +206,7 @@ local function getCommandTypes(args)
 			commands,
 			function(cmd)
 				if db.general.showIcons then
-					return ("|T%s:20:20|t %s"):format(cmd.icon, cmd.name)
+					return (ICON_NAME_FORMAT:format(cmd.icon, cmd.name)
 				else
 					return cmd.name
 				end
