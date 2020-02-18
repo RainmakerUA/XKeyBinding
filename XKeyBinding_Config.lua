@@ -10,7 +10,6 @@ local Config = XKeyBinding:NewModule("Config")
 
 local L = LibStub("AceLocale-3.0"):GetLocale(addonName)
 
-local type = type
 local ipairs = ipairs
 local pairs = pairs
 local print = print
@@ -161,10 +160,10 @@ local function formatDate(dateMeta)
 	end
 end
 
-local function mergeUniques(db)
+local function mergeUniques(t)
 	return merge(
 		{ commands = map(uniques, function(v) return { unique = v } end) },
-		db
+		t
 	)
 end
 
@@ -201,12 +200,12 @@ local function getCommandName(index)
 	return name
 end
 
-local function getCommandTypes(args)
+local function getCommandTypes()
 	return map(
 			commands,
 			function(cmd)
 				if db.general.showIcons then
-					return (ICON_NAME_FORMAT:format(cmd.icon, cmd.name)
+					return ICON_NAME_FORMAT:format(cmd.icon, cmd.name)
 				else
 					return cmd.name
 				end
