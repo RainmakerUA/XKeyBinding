@@ -1,4 +1,4 @@
-## Interface: 80300
+## Interface: 90001
 ## Title: Extended Key Binding
 ## Notes: Key Bindings for various in-game actions.
 ## Notes-ruRU: Назначения клавиш для различных игровых действий.

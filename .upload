@@ -7,10 +7,10 @@
 		"type": "alpha",
 		"log": "No changes provided",
 		"gameVersions": [
-			"8.2.5",
 			"8.3.0",
-			"1.13.2",
-			"1.13.3"
+			"9.0.1",
+			"1.13.3",
+			"1.13.5"
 		]
 	},
 	"exclude": [
