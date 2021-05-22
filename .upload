@@ -7,10 +7,9 @@
 		"type": "alpha",
 		"log": "No changes provided",
 		"gameVersions": [
-			"8.3.0",
-			"9.0.1",
-			"1.13.3",
-			"1.13.5"
+			"9.0.5",
+			"1.13.7",
+			"2.5.1"
 		]
 	},
 	"exclude": [
@@ -25,6 +24,7 @@
 		"AceAddon-3.0",
 		"AceConfig-3.0",
 		"AceConsole-3.0",
+		"AceDBOptions-3.0",
 		"AceGUI-3.0",
 		"AceDB-3.0",
 		"AceHook-3.0",
