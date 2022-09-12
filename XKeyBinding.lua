@@ -10,15 +10,13 @@ local Main = XKeyBinding:NewModule("Main")
 
 local L = LibStub("AceLocale-3.0"):GetLocale(addonName)
 
-local select = select
 local setglobal = setglobal
-local tinsert = tinsert
-local tostring = tostring
+local tinsert = table.insert
 local type = type
-local CreateFrame = CreateFrame
 local GetAddOnMetadata = GetAddOnMetadata
 local UIErrorsFrame = UIErrorsFrame
 local DEFAULT_CHAT_FRAME = DEFAULT_CHAT_FRAME
+local LE_GAME_ERR_SYSTEM = LE_GAME_ERR_SYSTEM
 
 local mod = Main
 

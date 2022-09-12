@@ -8,82 +8,18 @@ local addonName = ...
 local XKeyBinding = LibStub("AceAddon-3.0"):GetAddon(addonName)
 local Config = XKeyBinding:NewModule("Config")
 
+local Utils = LibStub("rmUtils-1.1")
+
 local L = LibStub("AceLocale-3.0"):GetLocale(addonName)
 
 local ipairs = ipairs
-local pairs = pairs
-local print = print
 local random = math.random
 local tinsert = table.insert
 local tconcat = table.concat
-local type = type
-local unpack = unpack
-
-local Event
 
 local mod = Config
 
-local function merge(target, source)
-	if not source then
-		target, source = {}, target
-	elseif type(target) ~= "table" then
-		target = {}
-	end
-	for k, v in pairs(source) do
-		if type(v) == "table" then
-			target[k] = merge(target[k], v)
-		elseif target[k] == nil then
-			target[k] = v
-		end
-	end
-	return target
-end
-
-local function map(t, mapFunc)
-	local res = {}
-	for k, v in pairs(t) do
-		res[k] = mapFunc(v, k, t)
-	end
-	return res
-end
-
-local function printf(str, ...)
-	print(str:format(...))
-end
-
-local function printTable(t, name, maxLevel)
-	--@debug@
-	local function indent(i)
-		return strrep("  ", i)
-	end
-	local function printIndent(i, s)
-		print(indent(i) .. s)
-	end
-	local function printTableImpl(t, name, level, max)
-		if level > max then
-			return
-		end
-
-		printIndent(level, name .. " = {")
-
-		for k, v in pairs(t) do
-			local vType = type(v)
-			if vType == "table" then
-				printTableImpl(v, k, level + 1, max)
-			elseif vType == "string" then
-				printIndent(level + 1, k .. " = '" .. tostring(v) .. "',")
-			else
-				printIndent(level + 1, k .. " = " .. tostring(v) .. ",")
-			end
-		end
-		printIndent(level, "},")
-	end
-
-	printTableImpl(t, name or "<unnamed>", 0, maxLevel or 16)
-	--@end-debug@
-end
-
-local addonMetadata = map(
+local addonMetadata = Utils.Map(
 	{ title = "Title", description = "Notes", author = "Author", version = "Version", date = "X-ReleaseDate" },
 	function(v, k, t)
 		return GetAddOnMetadata(addonName, v)
@@ -161,8 +97,8 @@ local function formatDate(dateMeta)
 end
 
 local function mergeUniques(t)
-	return merge(
-		{ commands = map(uniques, function(v) return { unique = v } end) },
+	return Utils.Override(
+		{ commands = Utils.Map(uniques, function(v) return { unique = v } end) },
 		t
 	)
 end
@@ -201,7 +137,7 @@ local function getCommandName(index)
 end
 
 local function getCommandTypes()
-	return map(
+	return Utils.Map(
 			commands,
 			function(cmd)
 				if db.general.showIcons then
@@ -214,7 +150,7 @@ local function getCommandTypes()
 end
 
 local function getCommandShortcut(index)
-	return map(
+	return Utils.Map(
 		{ GetBindingKey(("CLICK XBoundButton%02d:LeftButton"):format(index)) },
 		function(str)
 			if not str:find("-") then
@@ -456,7 +392,7 @@ function mod:OnInitialize()
 		local _, sectionName = ("-"):split(cat.obj.userdata.appName)
 		sectionName = sectionName:lower()
 		if name == "default" then
-			db[sectionName] = merge({}, defaults.profile[sectionName])
+			db[sectionName] = Utils.Override({}, defaults.profile[sectionName])
 		end
 		configChangedEvent(sectionName)
 	end
@@ -471,9 +407,7 @@ function mod:OnInitialize()
 		-- category.refresh = function(cat) return handler("refresh", cat) end
 	end
 
-	Event = XKeyBinding:GetModule("Event")
-
-	configChangedEvent = Event:New("OnConfigChanged")
+	configChangedEvent = Utils.Event.New("OnConfigChanged")
 
 	self.db = LibStub("AceDB-3.0"):New(addonName .. "DB", defaults, true)
 	db = self.db.profile
@@ -507,7 +441,7 @@ end
 
 mod.COMMAND_NUMBER = COMMAND_NUMBER
 
-mod.TYPES = merge(commandTypes)
+mod.TYPES = Utils.Clone(commandTypes)
 
 function mod:GetDB()
 	return mergeUniques(db)

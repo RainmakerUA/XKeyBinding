@@ -1,4 +1,4 @@
-## Interface: 90005
+## Interface: 90207
 ## Title: Extended Key Binding
 ## Notes: Key Bindings for various in-game actions.
 ## Notes-ruRU: Назначения клавиш для различных игровых действий.
@@ -19,4 +19,3 @@ Locales\locales.xml
 XKeyBinding.lua
 XKeyBinding_Buttons.lua
 XKeyBinding_Config.lua
-XKeyBinding_Event.lua

@@ -8,21 +8,22 @@ local addonName = ...
 local XKeyBinding = LibStub("AceAddon-3.0"):GetAddon(addonName)
 local Buttons = XKeyBinding:NewModule("Buttons")
 
+local Utils = LibStub("rmUtils-1.1")
+
 local L = LibStub("AceLocale-3.0"):GetLocale(addonName)
 
 local loadstring = loadstring
 local pcall = pcall
-local tinsert = tinsert
+local tinsert = table.insert
 local tostring = tostring
 local unpack = unpack
 local CreateFrame = CreateFrame
 local UIParent = UIParent
-local GetCVar = C_CVar and C_CVar.GetCVar or GetCVar
-local GetCVarDefault = C_CVar and C_CVar.GetCVarDefault or GetCVarDefault
-local SetCVar = C_CVar and C_CVar.SetCVar or SetCVar
+local GetCVar = C_CVar.GetCVar
+local GetCVarDefault = C_CVar.GetCVarDefault
+local SetCVar = C_CVar.SetCVar
 
 local Config
-local Event
 
 local mod = Buttons
 
@@ -153,8 +154,7 @@ local function getOnClickHandler(cmd, index)
 end
 
 function mod:OnInitialize()
-	Event = XKeyBinding:GetModule("Event")
-	notifyEvent = Event:New("OnNotify")
+    notifyEvent = Utils.Event.New("OnNotify")
 
 	Config = XKeyBinding:GetModule("Config")
 	types = Config.TYPES

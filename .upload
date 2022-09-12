@@ -7,9 +7,10 @@
 		"type": "alpha",
 		"log": "No changes provided",
 		"gameVersions": [
-			"9.0.5",
-			"1.13.7",
-			"2.5.1"
+			"9.2.7",
+			"1.14.3",
+			"2.5.4",
+            "3.4.0"
 		]
 	},
 	"exclude": [
@@ -29,6 +30,7 @@
 		"AceDB-3.0",
 		"AceHook-3.0",
 		"AceLocale-3.0",
-		"AceEvent-3.0"
+		"AceEvent-3.0",
+        "rmUtils-1.1"
 	]
 }
