@@ -108,7 +108,7 @@ local function getNotifyHandler(cmd, index)
 	if cmdType == types.MACRO_NAME then
 		handler = shortName .. L["Invoked Macro by name: "] .. cmd.text:trim()
 	elseif cmdType == types.MACRO_TEXT then
-		handler = shortName .. L["Invoked Macro sequence "] .. cmd.name
+		handler = shortName .. L["Invoked Macro sequence "] .. (cmd.name or L["(no name)"])
 	elseif cmdType == types.CVAR_TOGGLE then
 		handler = function(cvar, result)
 			if result == nil then

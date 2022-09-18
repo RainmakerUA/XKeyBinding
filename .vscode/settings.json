@@ -2,5 +2,7 @@
 	"editor.fontLigatures": false,
 	"files.associations": {
 		".upload": "json"
-	}
+    },
+	"editor.insertSpaces": false,
+	"editor.detectIndentation": false
 }
