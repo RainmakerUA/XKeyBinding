@@ -16,6 +16,7 @@ local ipairs = ipairs
 local random = math.random
 local tinsert = table.insert
 local tconcat = table.concat
+local GetAddOnMetadata = C_AddOns.GetAddOnMetadata
 
 local mod = Config
 
@@ -97,10 +98,7 @@ local function formatDate(dateMeta)
 end
 
 local function mergeUniques(t)
-	return Utils.Override(
-		{ commands = Utils.Map(uniques, function(v) return { unique = v } end) },
-		t
-	)
+	return Utils.Override({ commands = Utils.Map(uniques, function(v) return { unique = v } end) }, t)
 end
 
 local function getCommandName(index)
